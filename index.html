@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>音声テスト</title>
+</head>
+<body style="font-family: sans-serif; padding: 24px; text-align: center;">
+  <h1>リスニングテスト</h1>
+  <button id="playBtn" style="font-size: 18px; padding: 12px 24px;">
+    英語を再生する
+  </button>
+  <script>
+    document.getElementById("playBtn").addEventListener("click", () => {
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance("Watch out! Behind you!");
+      u.lang = "en-US";
+      speechSynthesis.speak(u);
+    });
+  </script>
+</body>
+</html>
